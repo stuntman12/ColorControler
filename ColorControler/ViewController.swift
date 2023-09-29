@@ -26,6 +26,7 @@ final class ViewController: UIViewController {
         super.viewDidLoad()
         
         setupViewColor()
+        setupViewSlider()
         setupNameLabel()
         setupValueLabel()
     }
@@ -63,6 +64,12 @@ extension ViewController {
         labelValueSliderGreen.text = String(format: "%.2f", sliderGreen.value)
         labelValueSliderBlue.text = String(format: "%.2f", sliderBlue.value)
         labelValueSliderRed.text = String(format: "%.2f", sliderRed.value)
+    }
+    
+    private func setupViewSlider() {
+        sliderGreen.minimumTrackTintColor = .green
+        sliderBlue.minimumTrackTintColor = .blue
+        sliderRed.minimumTrackTintColor = .red
     }
     
     //MARK: - ActionSlider
