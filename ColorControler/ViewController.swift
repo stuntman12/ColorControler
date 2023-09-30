@@ -20,6 +20,8 @@ final class ViewController: UIViewController {
     @IBOutlet weak var sliderBlue: UISlider!
     @IBOutlet weak var sliderRed: UISlider!
     
+    
+    
     //MARK: - ViewDidLoad
     
     override func viewDidLoad() {
