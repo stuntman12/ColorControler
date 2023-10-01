@@ -31,6 +31,7 @@ final class ViewController: UIViewController {
         setupViewSlider()
         setupNameLabel()
         setupValueLabel()
+        
     }
 
     @IBAction func actionSliderGreen() {
@@ -66,6 +67,7 @@ extension ViewController {
         labelValueSliderGreen.text = String(format: "%.2f", sliderGreen.value)
         labelValueSliderBlue.text = String(format: "%.2f", sliderBlue.value)
         labelValueSliderRed.text = String(format: "%.2f", sliderRed.value)
+        actionSlider()
     }
     
     private func setupViewSlider() {
