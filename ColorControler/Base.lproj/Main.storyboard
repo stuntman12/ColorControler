@@ -55,22 +55,22 @@
                                         <rect key="frame" x="0.0" y="283" width="333" height="122"/>
                                         <subviews>
                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="caS-nQ-5LZ">
-                                                <rect key="frame" x="0.0" y="10.666666666666686" width="22" height="101"/>
+                                                <rect key="frame" x="0.0" y="10.666666666666686" width="0.0" height="101"/>
                                                 <subviews>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Green" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Leo-Zs-SQ1">
-                                                        <rect key="frame" x="0.0" y="0.0" width="22" height="20.333333333333332"/>
+                                                        <rect key="frame" x="0.0" y="0.0" width="0.0" height="20.333333333333332"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                         <nil key="textColor"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Blue" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aJ1-Sw-rbn">
-                                                        <rect key="frame" x="0.0" y="40.333333333333314" width="22" height="20.333333333333329"/>
+                                                        <rect key="frame" x="0.0" y="40.333333333333314" width="0.0" height="20.333333333333329"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                         <nil key="textColor"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Red" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Vzu-P6-mU5">
-                                                        <rect key="frame" x="0.0" y="80.666666666666686" width="22" height="20.333333333333329"/>
+                                                        <rect key="frame" x="0.0" y="80.666666666666686" width="0.0" height="20.333333333333329"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                         <nil key="textColor"/>
                                                         <nil key="highlightedColor"/>
@@ -78,7 +78,7 @@
                                                 </subviews>
                                             </stackView>
                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="ifg-zH-kVS">
-                                                <rect key="frame" x="39" y="10.666666666666686" width="41.333333333333343" height="101"/>
+                                                <rect key="frame" x="17.000000000000004" y="10.666666666666686" width="41.333333333333343" height="101"/>
                                                 <subviews>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="A4a-5I-aSS">
                                                         <rect key="frame" x="0.0" y="0.0" width="41.333333333333336" height="20.333333333333332"/>
@@ -101,27 +101,27 @@
                                                 </subviews>
                                             </stackView>
                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="aBC-68-iKn">
-                                                <rect key="frame" x="97.333333333333329" y="6" width="186.66666666666669" height="110"/>
+                                                <rect key="frame" x="75.333333333333329" y="6" width="208.66666666666669" height="110"/>
                                                 <subviews>
                                                     <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="fMk-2S-ACk">
-                                                        <rect key="frame" x="-2" y="0.0" width="190.66666666666666" height="31"/>
+                                                        <rect key="frame" x="-2" y="0.0" width="212.66666666666666" height="31"/>
                                                         <color key="minimumTrackTintColor" systemColor="systemGreenColor"/>
                                                         <connections>
-                                                            <action selector="ActionSlider:" destination="BYZ-38-t0r" eventType="valueChanged" id="dtP-aV-NcG"/>
+                                                            <action selector="actionSlider:" destination="BYZ-38-t0r" eventType="valueChanged" id="dtP-aV-NcG"/>
                                                         </connections>
                                                     </slider>
                                                     <slider opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="vib-3b-TdZ">
-                                                        <rect key="frame" x="-2" y="40" width="190.66666666666666" height="31"/>
+                                                        <rect key="frame" x="-2" y="40" width="212.66666666666666" height="31"/>
                                                         <color key="minimumTrackTintColor" systemColor="systemBlueColor"/>
                                                         <connections>
-                                                            <action selector="ActionSlider:" destination="BYZ-38-t0r" eventType="valueChanged" id="uoB-uZ-ZU4"/>
+                                                            <action selector="actionSlider:" destination="BYZ-38-t0r" eventType="valueChanged" id="uoB-uZ-ZU4"/>
                                                         </connections>
                                                     </slider>
                                                     <slider opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="P6n-by-gsc">
-                                                        <rect key="frame" x="-2" y="80" width="190.66666666666666" height="31"/>
+                                                        <rect key="frame" x="-2" y="80" width="212.66666666666666" height="31"/>
                                                         <color key="minimumTrackTintColor" systemColor="systemRedColor"/>
                                                         <connections>
-                                                            <action selector="ActionSlider:" destination="BYZ-38-t0r" eventType="valueChanged" id="bZC-uE-Ucx"/>
+                                                            <action selector="actionSlider:" destination="BYZ-38-t0r" eventType="valueChanged" id="bZC-uE-Ucx"/>
                                                         </connections>
                                                     </slider>
                                                 </subviews>
@@ -163,7 +163,11 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="sQ3-yz-nuA">
-                        <barButtonItem key="rightBarButtonItem" systemItem="done" id="ClU-BV-jaS"/>
+                        <barButtonItem key="rightBarButtonItem" systemItem="done" id="ClU-BV-jaS">
+                            <connections>
+                                <action selector="buttonDone:" destination="BYZ-38-t0r" id="fnQ-b1-bhg"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                     <connections>
                         <outlet property="labelValueSliderBlue" destination="5E0-dO-BPD" id="E3b-ON-fom"/>
@@ -172,10 +176,10 @@
                         <outlet property="sliderBlue" destination="vib-3b-TdZ" id="c01-G5-Tq3"/>
                         <outlet property="sliderGreen" destination="fMk-2S-ACk" id="qIq-3o-THh"/>
                         <outlet property="sliderRed" destination="P6n-by-gsc" id="fYG-Gd-LjM"/>
+                        <outlet property="textFDBlue" destination="3lz-Na-UcK" id="r1y-Sc-03N"/>
+                        <outlet property="textFDGreen" destination="XK2-vz-8mn" id="dU9-xY-o9b"/>
+                        <outlet property="textFDRed" destination="N5n-29-CBQ" id="KO9-r6-TZl"/>
                         <outlet property="viewColor" destination="t6d-4m-tSe" id="MWl-ho-8hh"/>
-                        <outletCollection property="textFD" destination="XK2-vz-8mn" collectionClass="NSMutableArray" id="yx8-Wq-zfv"/>
-                        <outletCollection property="textFD" destination="3lz-Na-UcK" collectionClass="NSMutableArray" id="EfM-UT-4mn"/>
-                        <outletCollection property="textFD" destination="N5n-29-CBQ" collectionClass="NSMutableArray" id="CZO-MW-1ZS"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -204,19 +208,19 @@
     <resources>
         <image name="gear" catalog="system" width="128" height="122"/>
         <systemColor name="separatorColor">
-            <color red="0.23529411759999999" green="0.23529411759999999" blue="0.26274509800000001" alpha="0.28999999999999998" colorSpace="custom" customColorSpace="sRGB"/>
+            <color red="0.23529411764705882" green="0.23529411764705882" blue="0.2627450980392157" alpha="0.28999999999999998" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
         <systemColor name="systemBlueColor">
-            <color red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color red="0.0" green="0.47843137254901963" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
         <systemColor name="systemGreenColor">
-            <color red="0.20392156859999999" green="0.78039215689999997" blue="0.34901960780000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color red="0.20392156862745098" green="0.7803921568627451" blue="0.34901960784313724" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
         <systemColor name="systemRedColor">
-            <color red="1" green="0.23137254900000001" blue="0.18823529410000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color red="1" green="0.23137254901960785" blue="0.18823529411764706" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>

@@ -8,7 +8,7 @@ protocol SettingColorViewControllerDelegate: AnyObject {
 
 //MARK: - ViewController
 
-final class SettingColorViewController: UIViewController, UITextFieldDelegate {
+final class SettingColorViewController: UIViewController {
     
     //MARK: - Outlet
     
@@ -22,9 +22,12 @@ final class SettingColorViewController: UIViewController, UITextFieldDelegate {
     @IBOutlet weak var sliderBlue: UISlider!
     @IBOutlet weak var sliderRed: UISlider!
     
+        
+    @IBOutlet weak var textFDGreen: UITextField!
     
-    @IBOutlet var textFD: [UITextField]!
+    @IBOutlet weak var textFDBlue: UITextField!
     
+    @IBOutlet weak var textFDRed: UITextField!
     weak var delegate: SettingColorViewControllerDelegate!
     
     var color: UIColor!
@@ -34,31 +37,36 @@ final class SettingColorViewController: UIViewController, UITextFieldDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        textFDRed.delegate = self
+        textFDBlue.delegate = self
+        textFDGreen.delegate = self
         setupViewSlider()
         setupValueLabel()
         actionSlider()
-        textFD.forEach { $0.delegate = self }
     }
     
     //MARK: - ActionIBAction
     
-    @IBAction func ActionSlider(_ sender: UISlider) {
+    @IBAction func buttonDone(_ sender: UIBarButtonItem) {
+        view.endEditing(true)
+        dismiss(animated: true)
+    }
+    
+    @IBAction func actionSlider(_ sender: UISlider) {
         if sender.tag == 0 {
             labelValueSliderGreen.text = String(format: "%.2f", sliderGreen.value)
-            actionSlider()
         } else if sender.tag == 1 {
             labelValueSliderBlue.text = String(format: "%.2f", sliderBlue.value)
-            actionSlider()
         } else if sender.tag == 2 {
             labelValueSliderRed.text = String(format: "%.2f", sliderRed.value)
-            actionSlider()
         }
+        actionSlider()
     }
 }
 
 //MARK: - SettingView
 
-extension SettingColorViewController {
+extension SettingColorViewController: UITextFieldDelegate {
     
     private func setupValueLabel() {
         labelValueSliderGreen.text = String(format: "%.2f", sliderGreen.value)
@@ -83,8 +91,28 @@ extension SettingColorViewController {
     }
     
     //MARK: - DelegateTextField
-
-
+    
+    func textFieldDidEndEditing(_ textField: UITextField) {
+        guard let number = textField.text else { return }
+        guard let floatNumber = Float(number) else { showAlert(title: "Ошибка", message: "Введите число"); return }
+        if textField == textFDRed {
+            sliderRed.value = floatNumber / 100
+        } else if textField == textFDBlue {
+            sliderBlue.value = floatNumber / 100
+        } else if textField == textFDGreen {
+            sliderGreen.value = floatNumber / 100
+        }
+        actionSlider()
+        setupValueLabel()
+    }
+    
+    func showAlert(title: String, message: String) {
+        let alert =  UIAlertController(title: title, message: message, preferredStyle: .alert)
+        let alertButton = UIAlertAction(title: "Ок", style: .default)
+        alert.addAction(alertButton)
+        present(alert, animated: true)
+    }
+}
 
 
 
