@@ -1,6 +1,6 @@
-
-
 import UIKit
+
+//MARK: - Protocol
 
 protocol SettingColorViewControllerDelegate: AnyObject {
     func sendColor(_ color: UIColor)
@@ -24,10 +24,9 @@ final class SettingColorViewController: UIViewController {
     
         
     @IBOutlet weak var textFDGreen: UITextField!
-    
     @IBOutlet weak var textFDBlue: UITextField!
-    
     @IBOutlet weak var textFDRed: UITextField!
+    
     weak var delegate: SettingColorViewControllerDelegate!
     
     var color: UIColor!
@@ -42,7 +41,13 @@ final class SettingColorViewController: UIViewController {
         textFDGreen.delegate = self
         setupViewSlider()
         setupValueLabel()
-        actionSlider()
+        changeBackground()
+    }
+    
+    //MARK: - override method
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        super.touchesBegan(touches, with: event)
+        view.endEditing(true)
     }
     
     //MARK: - ActionIBAction
@@ -60,7 +65,7 @@ final class SettingColorViewController: UIViewController {
         } else if sender.tag == 2 {
             labelValueSliderRed.text = String(format: "%.2f", sliderRed.value)
         }
-        actionSlider()
+        changeBackground()
     }
 }
 
@@ -82,7 +87,7 @@ extension SettingColorViewController: UITextFieldDelegate {
     }
     
     //MARK: - ActionSlider
-    private func actionSlider() {
+    private func changeBackground() {
         viewColor.backgroundColor = .init(red: CGFloat(sliderRed.value),
                                           green: CGFloat(sliderGreen.value),
                                           blue: CGFloat(sliderBlue.value),
@@ -94,18 +99,26 @@ extension SettingColorViewController: UITextFieldDelegate {
     
     func textFieldDidEndEditing(_ textField: UITextField) {
         guard let number = textField.text else { return }
-        guard let floatNumber = Float(number) else { showAlert(title: "Ошибка", message: "Введите число"); return }
-        if textField == textFDRed {
-            sliderRed.value = floatNumber / 100
-        } else if textField == textFDBlue {
-            sliderBlue.value = floatNumber / 100
-        } else if textField == textFDGreen {
-            sliderGreen.value = floatNumber / 100
+        guard let floatNumber = Float(number) else { showAlert(title: "Ошибка", message: "Введи число до 100")
+            textField.text = ""
+            return }
+        if floatNumber > 100 {
+            showAlert(title: "Ошибка", message: "Введи число до 100")
+            textField.text = ""
+        } else {
+            if textField == textFDRed {
+                sliderRed.value = floatNumber / 100
+            } else if textField == textFDBlue {
+                sliderBlue.value = floatNumber / 100
+            } else if textField == textFDGreen {
+                sliderGreen.value = floatNumber / 100
+            }
+            changeBackground()
+            setupValueLabel()
         }
-        actionSlider()
-        setupValueLabel()
     }
     
+    //MARK: - Alert
     func showAlert(title: String, message: String) {
         let alert =  UIAlertController(title: title, message: message, preferredStyle: .alert)
         let alertButton = UIAlertAction(title: "Ок", style: .default)

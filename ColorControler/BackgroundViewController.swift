@@ -1,10 +1,3 @@
-//
-//  BackgroundViewController.swift
-//  ColorControler
-//
-//  Created by Даниил on 17.10.2023.
-//
-
 import UIKit
 
 //MARK: - ViewController
@@ -17,6 +10,9 @@ final class BackgroundViewController: UIViewController {
         settingVC.color = view.backgroundColor
     }
     
+    //MARK: - IBAction
+    @IBAction func unwind(for segue: UIStoryboardSegue) {
+    }
 }
 
 //MARK: - Delegate
